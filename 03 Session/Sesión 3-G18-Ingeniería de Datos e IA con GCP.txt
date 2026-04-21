@@ -1,0 +1,34 @@
+00:05:28	Fireflies.ai Notetaker Hector:	Hector invited Fireflies.ai here to record & take notes.  By continuing, you agree to https://fireflies.ai/privacy.
+
+Type:
+'/ff pause' - pause recording
+'/ff leave' - to stop recording
+
+View Realtime notes here: https://app.fireflies.ai/live/01KMH8N3YEHWKKEE3AFKZ8HTAX?ref=live_chat
+00:12:03	Docente Smart Data:	https://cloud.google.com/sdk/docs/install?hl=es-419
+00:14:54	Docente Smart Data:	gcloud —help
+00:19:06	Marco Rimache:	Buenas noches profesor , este proceso estaria instalando Sdk ?
+00:21:18	Marco Rimache:	En la consola también creo que hay una opción de terminal esta sería igual a la terminal que se instalando en la pc o cuál sería la diferencia ?
+00:28:43	Docente Smart Data:	gcloud config list
+00:29:56	Docente Smart Data:	gcloud config set project
+00:33:18	Oriana:	y un token
+00:36:48	Docente Smart Data:	gsutil ls
+00:44:35	Docente Smart Data:	https://github.com/dyanezs/cheat-sheets/blob/main/gcp/general.md
+00:45:34	Oriana:	Profesor, escuche que nos vas a compartir los comandos de gcloud.
+00:51:35	Docente Smart Data:	gcloud compute instances create sd-local-vm-01 --machine-type e2-medium --zone us-central1-f
+00:52:58	Oriana:	Ya las veo en GitHub. Gracias!
+00:53:06	Oriana:	Le cfreamos un enlace
+01:00:08	HMM:	ERROR: (gcloud.compute.ssh) Could not SSH into the instance.  It is possible that your SSH key has not propagated to the instance yet. Try running this command again.  If you still cannot connect, verify that the firewall and instance are set to accept ssh traffic.
+01:06:34	Docente Smart Data:	sudo apt install -y nginx
+01:08:34	Docente Smart Data:	gcloud compute instances add-tags sd-local-vm-01 --tags http-server,https-server
+01:09:21	Docente Smart Data:	gcloud compute firewall-rules create vm-allow-http --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:80 --source-ranges=0.0.0.0/0 --target-tags=http-server
+01:17:54	HMM:	Punto para Ronny!!
+01:31:44	Docente Smart Data:	#!/bin/bash
+apt update 
+apt -y install apache2
+echo "Aprendiendo Compute Engine con GCP desde mi VM:$(hostname) ip:$(hostname -i)" > /var/www/html/index.html
+01:31:49	Mary Huamán:	Reacted to "#!/bin/bash
+apt upda..." with 👍
+01:58:15	Fireflies.ai Notetaker Hector:	Attention: Recording will stop in 2 minutes. You can re-invite to continue recording.
+02:09:21	Oriana:	También puedes instalar la extensión en vsc para abrir los notebooks
+02:52:08	Marco Rimache:	Los puntos de la tarea está resumido en el classroom

@@ -1,0 +1,41 @@
+Lab 01.1
+gsutil mb gs://sd-local-bucket-x900
+gsutil ls -L
+curl https://cdn.mos.cms.futurecdn.net/BT4GR5JKJJTudF6kUGEqg7.jpg --output euler.jpg
+gsutil cp euler.jpg gs://sd-local-bucket-x900
+rm ada.jpg
+gsutil cp -r gs://sd-local-bucket-x900/ada.jpg .
+gsutil cp gs://sd-local-bucket-x900/euler.jpg gs://sd-local-bucket-x900/image-folder/
+gsutil ls gs://sd-local-bucket-x900
+gsutil ls -l gs://sd-local-bucket-x900/euler.jpg
+
+gsutil acl ch -u AllUsers:R gs://sd-local-bucket-x900/euler.jpg
+https://storage.googleapis.com/ronny-bucket-nuevo/ada.jpg
+gsutil acl ch -d AllUsers gs://sd-local-bucket-x900/euler.jpg
+gsutil rm gs://sd-local-bucket-x900/euler.jpg
+
+Lab 02
+gcloud storage buckets update gs://sd-local-bucket-x900 --lifecycle-file=lifecycle.json
+gcloud storage buckets describe gs://sd-local-bucket-x900 --format=default(lifecycle_config)
+gcloud storage buckets update gs://sd-local-bucket-x900 --clear-lifecycle
+
+Lab 03
+
+export BUCKET=<name of bucket> # Solo para MAC
+gsutil mb gs://sd-local-bucket-x900
+
+
+gsutil retention set 10s gs://sd-local-bucket-x900
+gsutil retention get gs://sd-local-bucket-x900
+gsutil cp gs://spls/gsp297/dummy_transactions gs://sd-local-bucket-x900/
+gsutil ls -L gs://sd-local-bucket-x900/dummy_transactions
+gsutil retention lock gs://sd-local-bucket-x900/
+gsutil retention get gs://sd-local-bucket-x900
+gsutil retention temp set gs://sd-local-bucket-x900/dummy_transactions
+gsutil rm gs://sd-local-bucket-x900/dummy_transactions
+gsutil retention temp release gs://sd-local-bucket-x900/dummy_transactions
+gsutil rm gs://sd-local-bucket-x900/dummy_transactions
+
+
+
+

@@ -1,0 +1,120 @@
+id: 4144019195989975678
+kind: "compute#instance"
+name: "sd-consola-igroup-01-zjrk"
+tags {
+  items: "http-server"
+  fingerprint: "FYLDgkTKlA4="
+}
+zone: "https://www.googleapis.com/compute/v1/projects/project-d0c76d9f-d27a-4298-8e3/zones/us-central1-f"
+shielded_instance_config {
+  enable_secure_boot: false
+  enable_vtpm: true
+  enable_integrity_monitoring: true
+}
+creation_timestamp: "2026-03-31T16:45:21.338-07:00"
+network_interfaces {
+  kind: "compute#networkInterface"
+  name: "nic0"
+  access_configs {
+    kind: "compute#accessConfig"
+    name: "External NAT"
+    type_: "ONE_TO_ONE_NAT"
+    nat_i_p: "34.67.188.211"
+    network_tier: "PREMIUM"
+  }
+  network_i_p: "10.128.0.12"
+  network: "https://www.googleapis.com/compute/v1/projects/project-d0c76d9f-d27a-4298-8e3/global/networks/default"
+  fingerprint: "Wx2ZSrVZK-E="
+  subnetwork: "https://www.googleapis.com/compute/v1/projects/project-d0c76d9f-d27a-4298-8e3/regions/us-central1/subnetworks/default"
+  stack_type: "IPV4_ONLY"
+}
+metadata {
+  kind: "compute#metadata"
+  items {
+    key: "instance-template"
+    value: "projects/474963966702/regions/us-central1/instanceTemplates/sd-consola-instancetemplate-01"
+  }
+  items {
+    key: "created-by"
+    value: "projects/474963966702/regions/us-central1/instanceGroupManagers/sd-consola-igroup-01"
+  }
+  items {
+    key: "startup-script"
+    value: "#!/bin/bash\napt update \napt -y install apache2\necho \"Aprendiendo Compute Engine con GCP desde mi VM:$(hostname) ip:$(hostname -i)\" > /var/www/html/index.html"
+  }
+  fingerprint: "lj7GSYkLVfQ="
+}
+disks {
+  boot: true
+  kind: "compute#attachedDisk"
+  mode: "READ_WRITE"
+  type_: "PERSISTENT"
+  device_name: "sd-consola-instancetemplate-01"
+  guest_os_features {
+    type_: "UEFI_COMPATIBLE"
+  }
+  guest_os_features {
+    type_: "VIRTIO_SCSI_MULTIQUEUE"
+  }
+  guest_os_features {
+    type_: "GVNIC"
+  }
+  guest_os_features {
+    type_: "SEV_CAPABLE"
+  }
+  guest_os_features {
+    type_: "SEV_LIVE_MIGRATABLE_V2"
+  }
+  index: 0
+  source: "https://www.googleapis.com/compute/v1/projects/project-d0c76d9f-d27a-4298-8e3/zones/us-central1-f/disks/sd-consola-igroup-01-zjrk"
+  architecture: "X86_64"
+  disk_size_gb: 10
+  licenses: "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/licenses/debian-12-bookworm"
+  auto_delete: true
+  interface: "SCSI"
+}
+start_restricted: false
+reservation_affinity {
+  consume_reservation_type: "ANY_RESERVATION"
+}
+shielded_instance_integrity_policy {
+  update_auto_learn_policy: true
+}
+label_fingerprint: "42WmSpB8rSM="
+status: "RUNNING"
+machine_type: "https://www.googleapis.com/compute/v1/projects/project-d0c76d9f-d27a-4298-8e3/zones/us-central1-f/machineTypes/e2-medium"
+fingerprint: "N1LrggGsFro="
+key_revocation_action_type: "NONE"
+resource_status {
+  effective_instance_metadata {
+    vm_dns_setting_metadata_value: "ZonalOnly"
+  }
+}
+display_device {
+  enable_display: false
+}
+service_accounts {
+  email: "474963966702-compute@developer.gserviceaccount.com"
+  scopes: "https://www.googleapis.com/auth/devstorage.read_only"
+  scopes: "https://www.googleapis.com/auth/logging.write"
+  scopes: "https://www.googleapis.com/auth/monitoring.write"
+  scopes: "https://www.googleapis.com/auth/service.management.readonly"
+  scopes: "https://www.googleapis.com/auth/servicecontrol"
+  scopes: "https://www.googleapis.com/auth/trace.append"
+}
+scheduling {
+  provisioning_model: "STANDARD"
+  on_host_maintenance: "MIGRATE"
+  preemptible: false
+  automatic_restart: true
+}
+cpu_platform: "Intel Broadwell"
+description: ""
+last_start_timestamp: "2026-03-31T16:45:30.941-07:00"
+self_link: "https://www.googleapis.com/compute/v1/projects/project-d0c76d9f-d27a-4298-8e3/zones/us-central1-f/instances/sd-consola-igroup-01-zjrk"
+deletion_protection: false
+can_ip_forward: false
+satisfies_pzi: true
+confidential_instance_config {
+  enable_confidential_compute: false
+}
