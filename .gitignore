@@ -1,3 +1,36 @@
 *.mp4
 
+desktop.ini
+GEMINI.md
+.DS_Store
+.git/
+desktop.ini
+logs/
+
+# Entorno virtual
+.venv/
 .env
+
+# VSCode settings
+.vscode/
+
+# GCP
+.gcloudignore
+.gitignore
+
+# # Archivos generados por Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# # Archivos temporales del sistema
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+
+# # Archivos de pruebas o cobertura
+.coverage
+htmlcov/
+.pytest_cache/

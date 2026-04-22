@@ -145,6 +145,9 @@ gcloud run deploy \
 
 
 
+gcloud run deploy mi-servicio-02 --source . --build-service-account=projects/project-d0c76d9f-d27a-4298-8e3/serviceAccounts/sa-cloud-build@project-d0c76d9f-d27a-4298-8e3.iam.gserviceaccount.com
+
+
 nuevos limites cloud functions
 laboratorios de pub/sub cloud functions
 bigquery column level accesses
